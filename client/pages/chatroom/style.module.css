@@ -70,3 +70,28 @@
   color: #5D3FD3;
   border: 2px solid #5D3FD3;
 }
+
+.endButton{
+  width: 80%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: tomato;
+  border: 2px solid tomato;
+  color: #fff;
+  font-size: 15px;
+}
+
+.endButton:hover{
+  background: #fff;
+  color: tomato;
+  border: 2px solid tomato;
+}
+
+.endCallContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}

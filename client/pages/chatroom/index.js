@@ -4,10 +4,18 @@ import { SocketContext } from "../../src/SocketContext";
 
 const Chatroom = () => {
   const [userId, setUserId] = useState("");
-  const { myVideo, userVideo, callData, callUser, myId, answerCall } =
-    useContext(SocketContext);
+  const {
+    myVideo,
+    userVideo,
+    callData,
+    callUser,
+    myId,
+    answerCall,
+    callAccepted,
+    endCall,
+    callEnded,
+  } = useContext(SocketContext);
 
-    console.log(callData);
   return (
     <>
       <div className={styles.mainContainer}>
@@ -23,7 +31,7 @@ const Chatroom = () => {
               />
             </div>
             <label className={styles.label}>Joy ID - {myId}</label>
-            <div>
+            <div style={{ display: callAccepted ? "none" : "block" }}>
               <input
                 type="text"
                 name="userId"
@@ -32,16 +40,31 @@ const Chatroom = () => {
                 className={styles.input}
                 placeholder="Enter User ID"
               />
+              <div className={styles.buttonContainer}>
+                <button
+                  onClick={() => callUser(userId, "JD")}
+                  className={styles.button}
+                >
+                  Call User
+                </button>
+                <button
+                  onClick={() => answerCall()}
+                  className={styles.button}
+                  style={{ display: callData.name ? "block" : "none" }}
+                >
+                  Accept Call
+                </button>
+              </div>
             </div>
-            <div className={styles.buttonContainer}>
+            <div className={styles.endCallContainer}>
               <button
-                onClick={() => callUser(userId, "JD")}
-                className={styles.button}
+                onClick={() => endCall()}
+                className={styles.endButton}
+                style={{
+                  display: callAccepted ? "block" : "none",
+                }}
               >
-                Call User
-              </button>
-              <button onClick={() => answerCall()} className={styles.button} style={{display: (callData.name ? 'block' : 'none')}}>
-                Accept Call
+                End Call
               </button>
             </div>
           </div>
