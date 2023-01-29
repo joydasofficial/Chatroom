@@ -3,7 +3,6 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import { io } from 'socket.io-client'
 
-const inter = Inter({ subsets: ['latin'] })
 
 const Home = ()=> {
   const [msg, setMsg] = useState([])
