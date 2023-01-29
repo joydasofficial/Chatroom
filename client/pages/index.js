@@ -9,7 +9,7 @@ const Home = ()=> {
   const [msg, setMsg] = useState([])
   const [room, setRoom] = useState('')
   const [text, setText] = useState('')
-  const socket = io('http://localhost:8000/')
+  const socket = io('https://chatroom-server.vercel.app/')
 
   useEffect(()=>{
     console.log(msg);

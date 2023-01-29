@@ -43,7 +43,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("User disconnected");
+    console.log("User disconnected...");
   });
 
   socket.on("calluser", ({ signal, callFrom, userToCall, name }) => {

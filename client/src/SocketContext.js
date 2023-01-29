@@ -8,7 +8,7 @@ import React, {
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
 
-const socket = io("http://localhost:8000/");
+const socket = io("https://chatroom-server.vercel.app/");
 
 const SocketContext = createContext();
 
